@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Etsy Export — Reviews</title>
+  <link rel="stylesheet" href="results.css">
+</head>
+<body>
+  <header>
+    <div>
+      <div class="brand">Etsy<span>Export</span></div>
+      <h1 id="listing-title"></h1>
+      <a id="listing-link" target="_blank" rel="noopener"></a>
+      <div id="scope-label" class="muted"></div>
+    </div>
+    <div class="header-actions">
+      <button id="stop" class="ghost">Stop</button>
+    </div>
+  </header>
+
+  <section id="progress-wrap">
+    <div id="status"></div>
+    <div class="bar"><div id="bar"></div></div>
+  </section>
+
+  <section id="summary" class="chips"></section>
+  <section id="distribution" class="dist"></section>
+
+  <section class="filters">
+    <select id="f-rating">
+      <option value="">Any rating</option>
+      <option value="5">★ 5</option><option value="4">★ 4</option>
+      <option value="3">★ 3</option><option value="2">★ 2</option><option value="1">★ 1</option>
+    </select>
+    <select id="f-rec">
+      <option value="">Recommends: any</option>
+      <option value="yes">Recommends</option>
+      <option value="no">Doesn't recommend</option>
+    </select>
+    <select id="f-photos">
+      <option value="">Photos: any</option>
+      <option value="yes">With photos</option>
+      <option value="no">Without photos</option>
+    </select>
+    <select id="f-resp">
+      <option value="">Seller reply: any</option>
+      <option value="yes">Has seller reply</option>
+      <option value="no">No seller reply</option>
+    </select>
+    <input id="f-from" type="date" title="From date">
+    <input id="f-to" type="date" title="To date">
+    <input id="f-text" type="search" placeholder="Search text, author, item…">
+    <label class="toggle" title="Show the original language instead of Etsy's translation">
+      <input type="checkbox" id="f-original"> Original text
+    </label>
+    <span id="filter-count" class="muted"></span>
+  </section>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th class="num">#</th><th>Rating</th><th>Date</th><th class="text">Review</th>
+          <th>Author</th><th>Item</th><th>Photos</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <span id="foot-note" class="muted">Exports respect the filters above.</span>
+    <div class="buttons">
+      <button id="csv" class="primary" disabled>CSV</button>
+      <button id="xlsx" class="primary" disabled>Excel</button>
+      <button id="json" class="primary" disabled>JSON</button>
+      <button id="photos" class="primary" disabled>Photos ZIP</button>
+    </div>
+  </footer>
+
+  <script type="module" src="results.js"></script>
+</body>
+</html>

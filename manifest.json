@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Etsy Export — Reviews",
+  "short_name": "Etsy Export",
+  "version": "1.0.0",
+  "description": "Export Etsy listing or shop reviews to CSV, Excel or JSON and download review photos as a ZIP. Runs entirely locally — no account, no tracking.",
+  "minimum_chrome_version": "102",
+  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "host_permissions": ["https://*.etsy.com/*", "https://i.etsystatic.com/*"],
+  "action": {
+    "default_title": "Export Etsy reviews",
+    "default_popup": "popup.html"
+  }
+}
